@@ -27,10 +27,6 @@ Stack CreateStack()
 	return S;
 }
 
-/*int Isfull(Stack S)
-{
-	return (top - 1 == MAXSIZE);
-}*/
 int IsEmpty(Stack S)
 {
 	return (S->Next == NULL);
@@ -50,7 +46,7 @@ ElementType pop(Stack S)
 	ElementType Topval;
 	if (IsEmpty(S))
 	{
-		std::cout << "Õ»Îª¿Õ" << std::endl;
+		std::cout << "æ ˆä¸ºç©º" << std::endl;
 	}
 	else
 	{
@@ -65,13 +61,13 @@ ElementType pop(Stack S)
 int main()
 {
 	S = CreateStack();
-	std::cout << "1ÈëÕ»" << std::endl;
+	std::cout << "1å…¥æ ˆ" << std::endl;
 	push(S, 1);
-	std::cout << "2ÈëÕ»" << std::endl;
+	std::cout << "2å…¥æ ˆ" << std::endl;
 	push(S, 2);
-	std::cout << "3ÈëÕ»" << std::endl;
+	std::cout << "3å…¥æ ˆ" << std::endl;
 	push(S, 3);
-	std::cout << "2³öÕ»" << std::endl;
+	std::cout << "2å‡ºæ ˆ" << std::endl;
 	pop(S, 2);
 }
 
