@@ -12,7 +12,7 @@ struct LNode
 };
 
 List MakeEmpty();
-int Find(ElementType X, List L);            // ²éÕÒ X µÚÒ»´Î³öÏÖµÄÏÂ±ê
+int Find(ElementType X, List L);            // æŸ¥æ‰¾ X ç¬¬ä¸€æ¬¡å‡ºç°çš„ä¸‹æ ‡
 void Insert(ElementType X, int i, List L);
 void Delete(int i, List L);
 ElementType FindKth(int K, List L);
@@ -42,12 +42,12 @@ void Insert(ElementType X, int i, List L)
     int j;
     if (L->last == MAXSIZE - 1)
     {
-        printf("±íÂú\n");
+        printf("è¡¨æ»¡\n");
         return;
     }
     if (i < 0 || i > L->last + 1)
     {
-        printf("²åÈëÎ»ÖÃ²»ºÏ·¨\n");
+        printf("æ’å…¥ä½ç½®ä¸åˆæ³•\n");
         return;
     }
     for (j = L->last; j >= i; j--)
@@ -63,7 +63,7 @@ void Delete(int i, List L)
     int j;
     if (i < 0 || i > L->last)
     {
-        printf("É¾³ıÎ»ÖÃ²»ºÏ·¨\n");
+        printf("åˆ é™¤ä½ç½®ä¸åˆæ³•\n");
         return;
     }
     for (j = i; j < L->last; j++)
@@ -77,8 +77,8 @@ ElementType FindKth(int K, List L)
 {
     if (K < 0 || K > L->last)
     {
-        printf("L->data[%d]²»´æÔÚÔªËØ\n", K);
-        return (ElementType)NULL; // ·µ»ØÎŞĞ§Öµ
+        printf("L->data[%d]ä¸å­˜åœ¨å…ƒç´ \n", K);
+        return (ElementType)NULL; // è¿”å›æ— æ•ˆå€¼
     }
     return L->data[K];
 }
@@ -94,30 +94,30 @@ int main()
     List L;
     L = MakeEmpty();
     Insert(23, 0, L);
-    printf("ÔÚÏßĞÔ±í L->data[0] ²åÈë 23\n");
+    printf("åœ¨çº¿æ€§è¡¨ L->data[0] æ’å…¥ 23\n");
     Insert(77, 1, L);
-    printf("ÔÚÏßĞÔ±í L->data[1] ²åÈë 77\n");
+    printf("åœ¨çº¿æ€§è¡¨ L->data[1] æ’å…¥ 77\n");
     Insert(24, 2, L);
-    printf("ÔÚÏßĞÔ±í L->data[2] ²åÈë 24\n");
+    printf("åœ¨çº¿æ€§è¡¨ L->data[2] æ’å…¥ 24\n");
     Insert(8, 3, L);
-    printf("ÔÚÏßĞÔ±í L->data[3] ²åÈë 8\n");
+    printf("åœ¨çº¿æ€§è¡¨ L->data[3] æ’å…¥ 8\n");
     Insert(30, 4, L);
-    printf("ÔÚÏßĞÔ±í L->data[4] ²åÈë 30\n");
+    printf("åœ¨çº¿æ€§è¡¨ L->data[4] æ’å…¥ 30\n");
 
-    printf("ÏßĞÔ±íÖĞÏÂ±êÎª 3 µÄÔªËØÊÇ£º%d\n", FindKth(3, L));
+    printf("çº¿æ€§è¡¨ä¸­ä¸‹æ ‡ä¸º 3 çš„å…ƒç´ æ˜¯ï¼š%d\n", FindKth(3, L));
 
     Delete(0, L);
-    printf("É¾³ıÏßĞÔ±íÖĞÏÂ±êÎª 0 µÄÔªËØ\n");
+    printf("åˆ é™¤çº¿æ€§è¡¨ä¸­ä¸‹æ ‡ä¸º 0 çš„å…ƒç´ \n");
     Delete(2, L);
-    printf("É¾³ıÏßĞÔ±íÖĞÏÂ±êÎª 2 µÄÔªËØ\n");
-    Delete(4, L); // Õâ¸öÉ¾³ı¿ÉÄÜ»áÊ§°Ü£¬ÒòÎª Length ÊÇ 3£¬ÏÂ±ê×î´óÎª 2
+    printf("åˆ é™¤çº¿æ€§è¡¨ä¸­ä¸‹æ ‡ä¸º 2 çš„å…ƒç´ \n");
+    Delete(4, L); // è¿™ä¸ªåˆ é™¤å¯èƒ½ä¼šå¤±è´¥ï¼Œå› ä¸º Length æ˜¯ 3ï¼Œä¸‹æ ‡æœ€å¤§ä¸º 2
 
-    printf("´ËÊ±ÏßĞÔ±íÎª£º");
+    printf("æ­¤æ—¶çº¿æ€§è¡¨ä¸ºï¼š");
     for (i = 0; i < Length(L); i++)
     {
         printf("%d ", L->data[i]);
     }
-    printf("\nÆä³¤¶ÈÎª£º%d\n", Length(L));
+    printf("\nå…¶é•¿åº¦ä¸ºï¼š%d\n", Length(L));
 
     return 0;
 }
